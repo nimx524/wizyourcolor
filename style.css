@@ -1,0 +1,560 @@
+@charset "UTF-8";
+
+/* 共通部分
+------------------------------- */
+html {
+    font-size: 100%;
+}
+body{
+    font-family: 'Arial',"Yu Gothic Medium", "游ゴシック Medium", 'Yu Gothic', "游体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    line-height: 1.75;
+    color: white;
+    position: relative;
+    margin: 0;
+    overflow-x: hidden;
+    
+}
+
+.movie_blk{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    z-index: -1;
+}
+
+.video{
+ position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 177.77777778vh;
+    height: 56.25vw;
+    min-height: 100%;
+    min-width: 100%;
+}
+a {
+    text-decoration: none;
+}
+
+.wrapper {
+    margin: 0 auto;
+}
+
+/* 大きな背景画像 */
+.big-bg {
+    background-size: cover;
+    background-position: center top;
+    background-repeat: no-repeat;
+}
+
+/* 見出し */
+.page-title {
+    font-size: 48rem;
+    font-family: 'Philosopher', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+.page-title1 {
+    font-size: 10rem;
+    font-family: 'Philosopher', serif;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+}
+.page-title-bk {
+    font-size: 5rem;
+    font-family: 'Helvetica', serif;
+    text-transform: uppercase;
+    font-weight: normal;
+    color: darkslategray;
+}
+
+
+.sub-title {
+    font-size: 1.375rem;
+    padding: 0 8px 8px;
+    border-bottom: 2px #0bd solid;
+    font-weight: normal;
+}
+
+/* ボタン */
+.button {
+    padding: 28px 108px;
+    font-size: 3rem;
+    background: rgba(0, 0, 0, 0.41);
+    color: white;
+}
+.button1 {
+    font-size: 1rem;
+    background: rgba(0, 0, 0, 0.29);
+    color: #000000;
+    border-radius: 60px;
+    padding: 15px 40px;
+    margin: 2px;
+}
+.button:hover {
+    background: rgba(126, 209, 255, 0.32);
+}
+
+.button1:hover {
+    background: rgba(126, 209, 255, 0.32);
+}
+
+/* iframe */
+iframe {
+    width: 100%;
+}
+
+/* HEADER
+------------------------------- */
+.page-header {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.logo {
+    width: 301px;
+    margin-top: 5px;
+    display: auto;
+    margin: 0 auto;
+}
+.main-nav {
+    display: flex;
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-top: 34px;
+    list-style: none;
+}
+.main-nav li {
+    margin-left: 36px;
+}
+.main-nav a {
+    color: #432;
+}
+.main-nav a:hover {
+    color: #0bd;
+}
+
+/* HOME
+------------------------------- */
+#home {
+    background-image: url(../images/ulm-05.jpg);
+    min-height: 100vh;
+}
+
+#home .page-title {
+    text-transform: none;
+    color: white;
+}
+.home-content {
+    text-align: center;
+    margin-top: 2%;
+}
+.home-content img{
+    max-height: 400px;
+    margin: 50px;
+}
+
+
+
+.home-content p {
+    font-size: 1.3rem;
+    margin: 1px 0 20px;
+    color: white;
+}
+
+.home-content p-gray {
+    font-size: 1.125rem;
+    margin: 10px 0 100px;
+    color: darkslategrey;
+}
+
+.img-width {
+    max-width: 800px;
+    margin-bottom: 100px;
+    align-content: center;
+}
+
+/* NEWS
+------------------------------- */
+#news {
+  min-height: 60vh; 
+}
+
+.news-contents {
+  margin-top: 40px;
+}
+#news .page-title {
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    
+}
+.news-contents {
+    display: flex;
+    justify-content:center;
+    margin-bottom: 50px;
+    font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", sans-serif;
+    color: darkslategray;
+}
+
+/* 記事部分 */
+article {
+    width: 100%;
+}
+.post-info {
+    position: relative;
+    padding-top: 4px;
+    margin-bottom: 28px;
+    
+}
+ee.post-title {
+    font-family: "Yu Gothic", sans-serif;
+    font-size: 20rem;
+    font-weight: normal;
+    margin-left: 10px;
+  margin-left: auto; 
+  margin-right: auto;
+}
+.post-cat {
+    margin-left: 100px;
+}
+article img {
+    margin-bottom: 20px;
+}
+article p {
+    margin-bottom: 1rem;
+}
+
+/* サイドバー */
+aside {
+    width: 22%;
+}
+.sub-menu {
+    margin-bottom: 60px;
+    list-style: none;
+}
+.sub-menu li {
+    border-bottom: 1px #ddd solid;
+}
+.sub-menu a {
+    color: #432;
+    padding: 10px;
+    display: block;
+}
+.sub-menu a:hover {
+    color: #0bd;
+}
+aside p {
+    padding: 12px 10px;
+}
+
+/* WORK
+------------------------------- */
+#work {
+    background-color: black;
+    min-height: 600px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-clip:border-box;
+    
+ 
+}
+.work-content {
+    max-width: 560px;
+    margin-top: 3%;
+    color: whitesmoke;
+    display: flex;
+    justify-content: center;
+}
+.work-content .page-title {
+    text-align: center;
+    font-family: sans-serif;
+}
+.work-content p {
+    font-size: 1.125rem;
+    margin: 10px 0 0;
+    text-align: center;
+}
+
+.grid {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: white;
+  text-align:left;
+    justify-content: center;
+}
+.grid_wide {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(800px, 1fr));
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color: white;
+  text-align:left;
+}
+.item{
+    background-color: black;
+    padding: 30px;
+    justify-content: space-around;
+}
+footer {
+    background-color: rgba(0, 0, 0, 0.25);
+    text-align: center;
+    padding: 25px 0;
+}
+footer p {
+    color: white;
+    font-size: 1rem;
+}
+
+
+#bg-video {
+     position: fixed;
+ right: 0;
+ bottom: 0;
+ min-width: 100%;
+ min-height: 100%;
+ width: auto;
+ height: auto;
+ z-index: -100;
+ background-size: cover;
+}
+
+.rogo {
+    position: relative;
+    margin-top: 5px;
+    background-position: center top;
+    padding: -1px;
+    justify-content: space-around;
+    object-fit: cover;
+    object-position: center center;
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.fade-in1 {
+    transform: translateY(30px);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 2s ease-out, transform 1.5s ease-out;
+line-height: 2.2;
+  margin-bottom: 1.5em; 
+  max-width: 1130px; 
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.model {
+    display: block;
+    object-fit: cover;
+    object-position: center center;
+    width: 35%;
+    height: auto;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+} 
+
+.news-contents {
+  margin-top: 40px;
+}
+
+.fade, .fade-left, .fade-right {
+    opacity: 0;
+    transition: opacity 0s ease-out, transform 0.8s ease-out;
+}
+.fade-right {
+    transform: translateX(50px);
+}
+.fade-right.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+.fade-left {
+    transform: translateX(-50px);
+}
+.fade-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.color-button {
+     font-size: 3rem;
+    background: #c87aff;
+    color: white;
+    border-radius: 52px;
+    padding: 9px 51px;
+    margin: 40px;
+}
+
+#pipi {
+    width: 200px;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.confirm-btn {padding: 10px 20px; font-size: 1rem; cursor: pointer;margin: 20px 0;
+}
+
+.buttonok {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: aliceblue
+}
+
+.button-bg {
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.21);
+    padding: 12px;
+    text-align: center;
+}
+.button-bg:hover {
+    background: rgba(126, 209, 255, 0.32);
+}
+.img-wrapper {
+        position: relative;
+    display: block;
+    width: 100%;
+    margin: auto 0;
+}
+
+
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+
+/* スクロールコンテンツ */
+.scrollbox h1 {
+    color: #fff;
+    font-size: 2.5rem;
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    margin-bottom: 20px;
+    min-height: 1.2em; 
+}
+.scrollbox h1 {
+    font-size: 2vw;
+    color: #fff;
+}
+
+
+/* ボタン */
+.cta-btn {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 50px;
+    background: rgba(255, 255, 255, 0.79);
+    color: rgba(0, 0, 0, 0.45);
+    font-size: 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    z-index: 2;
+    transition: 0.3s;
+}
+.cta-btn:hover {
+    background: rgba(255,255,255,1);
+}
+
+:root {
+    --img-width: 400px;
+    --img-height: 250px;
+    --gap: 20px;
+    --scroll-speed: 30s;
+}
+
+body {
+    margin: 0;
+    padding: 30px 0;
+    background-color: #f5f5f5;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; 
+}
+
+.slider-container {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 20px 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.typing::after {
+    content: "|";
+    animation: blink 0.8s infinite;
+    margin-left: 5px;
+    color: #ff00ff; /* アクセントカラー */
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.scrolldown {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+}
+
+.scrolldown::after {
+    content: "";
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    width: 1px;
+    height: 30px;
+    background: #fff;
+    animation: pathmove 1.5s infinite;
+}
+
+@keyframes pathmove {
+    0% { height: 0; top: 20px; opacity: 0; }
+    30% { height: 30px; opacity: 1; }
+    100% { height: 0; top: 50px; opacity: 0; }
+}
+
+
+.kazari {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.box {
+    display: flex;
+    justify-content: center;
+}
