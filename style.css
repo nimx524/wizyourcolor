@@ -214,13 +214,13 @@ article {
     margin-bottom: 28px;
     
 }
-ee.post-title {
+.post-title {
     font-family: "Yu Gothic", sans-serif;
     font-size: 20rem;
     font-weight: normal;
     margin-left: 10px;
-  margin-left: auto; 
-  margin-right: auto;
+  text-align: center; 
+  margin: 0 auto;
 }
 .post-cat {
     margin-left: 100px;
@@ -331,16 +331,12 @@ footer p {
 }
 
 .rogo {
-    position: relative;
-    margin-top: 5px;
-    background-position: center top;
-    padding: -1px;
-    justify-content: space-around;
-    object-fit: cover;
-    object-position: center center;
-    width: 80%;
+    display: block;
+    width: 180px;
+    max-width: 60%;
     height: auto;
     margin: 0 auto;
+    object-fit: contain;
 }
 
 .fade-in1 {
