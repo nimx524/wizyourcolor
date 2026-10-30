@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<head>
+        <meta charset="utf-8">
+        <meta name="description" content="Graphic Arts department - daily news and a sort of things">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS -->
+        <link href="https://fonts.googleapis.com/c ss?family=Philosopher" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>confirm the color</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+    color: white;
+    transition: background-color 0.3s;
+  }
+</style>
+</head>
+  
+  <div id="news" class="big-bg">
+            <header class="page-header wrapper img-wrapper">
+              <img class="kazari" src="image/sousyoku.png">
+                <img class="model" src="image/ok9.PNG">
+            </header>
+<div class="button-bg">
+    <a class="buttonok" href="gallery.html">back to the GALLERY</a>
+    </div>
+<script>
+// localStorageから保存された色を取得
+const color = localStorage.getItem('selectedColor');
+if(color) {
+  document.body.style.backgroundColor = color;
+}
+</script>
+  </div>
+  

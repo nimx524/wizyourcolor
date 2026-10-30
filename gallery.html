@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gallery</title>
+    <style>
+        :root {
+            --w: 400px;  /* 画像の幅 */
+            --h: 601px;  /* 画像の高さ */
+            --g: 20px;   /* 隙間 */
+            --s: 25s;    /* 速度 */
+            --header-h: 70px; /* ヘッダーの高さ */
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* --- ヘッダー設定 --- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: var(--header-h);
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(5px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 50px;
+            box-sizing: border-box;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+
+        header .logo {
+            display: flex;
+            align-items: center;
+            height: var(--header-h)
+        }
+        
+        header .logo img {
+            height: 50px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        header nav a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        main {
+            margin-top: var(--header-h); /* ヘッダーの高さ分下げる */
+            flex: 1; /* 余ったスペースを埋める（フッターを下に押し出す） */
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            padding: 50px 0;
+        }
+
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            background: white;
+            padding: 20px 0;
+        }
+
+        .slider-track {
+            display: flex;
+            width: calc((var(--w) + var(--g)) * 10);
+        }
+
+        .left { animation: scroll-l var(--s) linear infinite; }
+        .right { animation: scroll-r var(--s) linear infinite; }
+
+        .slider-container:hover .slider-track {
+            animation-play-state: paused;
+        }
+
+        .card {
+            position: relative;
+            width: var(--w);
+            height: var(--h);
+            margin-right: var(--g);
+            flex-shrink: 0;
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.7);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .card:hover .overlay { opacity: 1; }
+        
+        @keyframes scroll-l {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(calc((var(--w) + var(--g)) * -5)); }
+        }
+
+        @keyframes scroll-r {
+            0% { transform: translateX(calc((var(--w) + var(--g)) * -5)); }
+            100% { transform: translateX(0); }
+        }
+
+        /* --- フッター設定 --- */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 50px;
+            text-align: center;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <a href="index.html">
+        <img src="images/logo.png" alt="logo">
+        </a>    
+    </div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="concept.html">Concept</a>
+    </nav>
+</header>
+
+<main>
+    <div class="slider-container">
+        <div class="slider-track left">
+            <div class="card"><img src="image/1.png"><a href="model1.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/2.png"><a href="model2.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/3.png"><a href="model3.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/4.png"><a href="model4.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/5.png"><a href="model5.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/1.png"><a href="model1.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/2.png"><a href="model2.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/3.png"><a href="model3.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/4.png"><a href="model4.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/5.png"><a href="model5.html" class="overlay"><span>魔法をかける</span></a></div>
+        </div>
+    </div>
+
+    <div class="slider-container">
+        <div class="slider-track right">
+            <div class="card"><img src="image/6.png"><a href="model6.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/7.png"><a href="model7.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/8.png"><a href="model8.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/9.png"><a href="model9.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/10.png"><a href="model10.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/6.png"><a href="model6.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/7.png"><a href="model7.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/8.png"><a href="model8.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/9.png"><a href="model9.html" class="overlay"><span>魔法をかける</span></a></div>
+            <div class="card"><img src="image/10.png"><a href="model10.html" class="overlay"><span>魔法をかける</span></a></div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <p>&copy; 2025 wiz your color.</p>
+</footer>
+
+</body>
+</html>

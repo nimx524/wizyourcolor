@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>concept-imperfection-</title>
+        <meta name="description" content="Graphic Arts department - daily news and a sort of things">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="news" class="big-bg">
+            <header class="page-header wrapper">
+                <img class="rogo" src="images/logo.png">
+                
+            </header>
+
+            <div class="wrapper">
+                
+            </div>
+        </div>
+
+        <div class="news-contents wrapper">
+            <article>
+                <header class="post-info">
+                    　<h2 class="post-title">CONCEPT</h2>
+                </header>
+                <header class="post-info"></header>
+                <p class="fade-in">不完全であること。</p>
+                <p class="fade-in">それは、決して不十分で悲しいことではありません。</p>
+                <p class="fade-in">「未完成」で「不安定」だからこそ、そこには自分の「好き」を自由に足せる「余白」が残されています。</p>
+                <p class="fade-in">この場所が大切にしているのは、完成されていないからこそ広がる美しさと可能性。</p>
+                <p class="fade-in">そして、その余白に自由に想像を重ねる楽しさ。</p>
+                <p class="fade-in">ここは、まだ柄を持たない洋服たちがひっそりと集う、”欠けたまま”のファッションショー。</p>
+                <p class="fade-in">不完全と呼ばれるその姿は、終わりではなく、はじまり。</p>
+                <p class="fade-in">誰かの想像力が触れるのを静かに待つ、真っ白なキャンバスです。</p>
+                <p class="fade-in">色の決まっていない洋服たちは、あなたを待っています。</p>
+                <p class="fade-in">デザイナーは、あなた。</p>
+                <p class="fade-in">もし、このキャンバスに色を足すなら、どんな「好き」を縫い合わせるのでしょうか。</p>
+                <p class="fade-in">私たちのロゴである wiz your color には 魔法をかける魔法使いとしての wizard</p>
+                <p class="fade-in">そして、</p>
+                <p class="fade-in">あなたの感性に寄り添い、共に在る with という二つの願いを込めました。</p>
+                <p class="fade-in">色のない服たちは、あなたが魔法をかけるその瞬間を、ずっと待っています。</p>
+                <p class="fade-in">あなたがあなただけの色を添えるとき、 不完全だったキャンバスにはじめて魔法がかかり、</p>
+                <p class="fade-in">世界に一つの物語が動き出します。</p>
+                <p class="fade-in">不完全という名のキャンバスに <a class="button1" href="gallery.html">あなただけの魔法を。</a></p>
+
+            </article>
+
+           
+        </div>
+
+        <footer>
+            <div class="wrapper">
+                <p><small>Wiz your color</small></p>
+            </div>
+        </footer>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const fadeElems = document.querySelectorAll('.fade-in');
+  const options = {
+    root: null, 
+    rootMargin: "0px",
+    threshold: 0.
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        observer.unobserve(entry.target); 
+      }
+    });
+  }, options);
+
+  fadeElems.forEach(el => observer.observe(el));
+});
+</script>
+    </body>
+</html>

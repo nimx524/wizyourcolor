@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+     <meta charset="utf-8"> 
+        <meta name="description" content="Graphic Arts department - daily news and a sort of things">
+        <link rel="icon" type="image/png" href="images/favicon.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- CSS -->
+        <link href="https://fonts.googleapis.com/css?family=Philosopher" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>become your color</title>
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    font-family: sans-serif;
+    margin: 0;
+    color: white;
+  }
+  .sliders { 
+    display: flex; 
+    gap: 10px; 
+    margin-bottom: 20px;
+    justify-content: center;
+  }
+  input[type="range"] { width: 150px; }
+  button { 
+    padding: 10px 20px; 
+    font-size: 1rem; 
+    cursor: pointer;
+    margin: 20px 0;
+  }
+</style>
+</head>
+    
+<body>
+            <div id="news" class="big-bg">
+            <header class="page-header wrapper">
+                <img class="model" src="image/10.PNG">
+            </header>
+<div class="sliders">
+  R: <input type="range" id="r" min="0" max="255" value="100">
+  G: <input type="range" id="g" min="0" max="255" value="100">
+  B: <input type="range" id="b" min="0" max="255" value="200">
+</div>
+
+<div class="box">
+<button id="confirm">完了！</button>
+</div>
+  
+<script>
+const r = document.getElementById('r');
+const g = document.getElementById('g');
+const b = document.getElementById('b');
+const button = document.getElementById('confirm');
+const body = document.body;
+
+// リアルタイムで背景変更
+function updateColor() {
+  body.style.backgroundColor = `rgb(${r.value},${g.value},${b.value})`;
+}
+
+r.addEventListener('input', updateColor);
+g.addEventListener('input', updateColor);
+b.addEventListener('input', updateColor);
+
+button.addEventListener('click', () => {
+  const color = `rgb(${r.value},${g.value},${b.value})`;
+  // localStorageに保存
+  localStorage.setItem('selectedColor', color);
+  // 別ページへ移動
+  window.location.href = 'ok10.html';
+});
+
+// 初期背景色
+updateColor();
+</script>
+
+  </div>
+</body>

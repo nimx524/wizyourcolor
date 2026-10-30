@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Magic Walk</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            background: #fff;
+            height: 200vh;
+        }
+
+        /* 固定背景 */
+        #magic-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+            z-index: -2;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        .hero-section {
+            position: relative;
+            width: 100%;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 1;
+        }
+
+        #walking-girl {
+            width: 80%;
+            max-width: 900px;
+            height: auto;
+            transform: translateY(20px); 
+        }
+
+
+        #pageHr {
+            background: #fff;
+            position: relative;
+            height: 5px;
+            width: 100%;
+            z-index: 10;
+        }
+
+        .rhombus {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 40px;
+            height: 40px;
+            background: #fff;
+            border: 5px solid #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .rhombus i {
+            transform: rotate(-45deg);
+            color: #000;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+
+        .message-section {
+            position: relative;
+            width: 100%;
+            height: 120vh;
+            background: rgba(255, 255, 255, 0.3);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 5;
+        }
+
+        #typing-text {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            max-width: 85%;
+            padding: 0 20px;
+        }
+
+        #concept-button {
+            margin-top: 60px;
+            padding: 18px 60px;
+            font-size: 1.2rem;
+            background: #fff;
+            color: #333;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            opacity: 0;
+            transition: all 1s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        #concept-button.visible {
+            opacity: 1;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div id="magic-bg"></div>
+
+    <div class="hero-section">
+        <img id="walking-girl" src="image/q1.png" alt="animation">
+    </div>
+
+    <div id="pageHr">
+        <div class="rhombus"><i>↓</i></div>
+    </div>
+
+    <div class="message-section">
+        <div id="typing-text"></div>
+        <button id="concept-button" onclick="location.href='concept.html'">concept</button>
+    </div>
+
+    <script>
+        const images = ["image/q1.png","image/q2.png","image/q3.png","image/q4.png","image/q5.png","image/q6.png","image/q7.png","image/q8.png"];
+        let imgIdx = 0;
+        setInterval(() => {
+            document.getElementById('walking-girl').src = images[imgIdx];
+            imgIdx = (imgIdx + 1) % images.length;
+        }, 160);
+
+        const message = "あなたの色で魔法をかけて、あなたの色で世界を変えて。";
+        let isStarted = false;
+
+        window.addEventListener('scroll', function() {
+            const msgSection = document.querySelector('.message-section');
+            const rect = msgSection.getBoundingClientRect();
+            
+            if (rect.top < window.innerHeight / 1.5 && !isStarted) {
+                isStarted = true;
+                startTyping();
+            }
+        });
+
+        function startTyping() {
+            let i = 0;
+            const el = document.getElementById('typing-text');
+            function type() {
+                if (i < message.length) {
+                    el.textContent += message.charAt(i);
+                    i++;
+                    setTimeout(type, 100);
+                } else {
+                    document.getElementById('concept-button').classList.add('visible');
+                }
+            }
+            type();
+        }
+    </script>
+</body>
+</html>
