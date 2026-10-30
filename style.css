@@ -216,7 +216,7 @@ article {
 }
 .post-title {
     font-family: "Yu Gothic", sans-serif;
-    font-size: 20rem;
+    font-size: 5rem;
     font-weight: normal;
     margin-left: 10px;
   text-align: center; 
@@ -332,8 +332,8 @@ footer p {
 
 .rogo {
     display: block;
-    width: 180px;
-    max-width: 60%;
+    width: 300px;
+    max-width: 80%;
     height: auto;
     margin: 0 auto;
     object-fit: contain;
